@@ -1,14 +1,34 @@
+# Nombre del workflow (aparece en la pestaña "Actions" de GitHub)
 name: "Deploy - Hello world!"
 
+# Este workflow se ejecuta cada vez que hay un push a la rama main
 on:
   push:
     branches: [main]
 
 jobs:
+  # Definición de un job llamado "deploy-test"
   deploy-test:
+    # El job se ejecutará en una máquina virtual con Ubuntu
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "Do pull to the repository"
-      - run: echo "Run migrations"
-      - run: echo "Create the binary"
-      - run: echo "Publish the version"
+      # Paso 1: Clonar el repositorio en la máquina virtual
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # Paso 2: Simular un "pull" del código fuente (aquí solo es un echo, no hace nada real)
+      - name: Pull the repository
+        run: echo "Do pull to the repository"
+
+      # Paso 3: Simular la ejecución de migraciones de base de datos
+      - name: Run migrations
+        run: echo "Run migrations"
+
+      # Paso 4: Simular la creación de un binario (por ejemplo, compilar el código)
+      - name: Create the binary
+        run: echo "Create the binary"
+
+      # Paso 5: Simular la publicación de una nueva versión (por ejemplo, subir a un servidor o repositorio)
+      - name: Publish the version
+        run: echo "Publish the version"
