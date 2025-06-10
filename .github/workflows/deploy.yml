@@ -1,0 +1,14 @@
+name: "Deploy - Hello world!"
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-test:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "Do pull to the repository"
+      run: echo "Run migrations"
+      run: echo "Create the binary"
+      run: echo "Publish the version"
